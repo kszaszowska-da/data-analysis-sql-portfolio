@@ -1,0 +1,401 @@
+﻿Product_ID;Product_Name;Category;Price
+1;Product 001;Face Care;21.53
+2;Product 002;Face Care;143.74
+3;Product 003;Face Care;81.37
+4;Product 004;Face Care;33.63
+5;Product 005;Face Care;90.54
+6;Product 006;Face Care;16.82
+7;Product 007;Face Care;159.59
+8;Product 008;Face Care;19.29
+9;Product 009;Face Care;8.89
+10;Product 010;Face Care;227.4
+11;Product 011;Face Care;87.09
+12;Product 012;Face Care;11.5
+13;Product 013;Face Care;156.09
+14;Product 014;Face Care;174.71
+15;Product 015;Face Care;76.66
+16;Product 016;Face Care;33.32
+17;Product 017;Face Care;24.97
+18;Product 018;Face Care;168.09
+19;Product 019;Face Care;235.23
+20;Product 020;Face Care;91.71
+21;Product 021;Face Care;198.28
+22;Product 022;Face Care;88.54
+23;Product 023;Face Care;59.39
+24;Product 024;Face Care;59.18
+25;Product 025;Face Care;226.23
+26;Product 026;Face Care;32.23
+27;Product 027;Face Care;12.77
+28;Product 028;Face Care;69.3
+29;Product 029;Face Care;157.95
+30;Product 030;Face Care;45.99
+31;Product 031;Face Care;78.21
+32;Product 032;Face Care;227.01
+33;Product 033;Face Care;78.72
+34;Product 034;Face Care;214.26
+35;Product 035;Face Care;32.77
+36;Product 036;Face Care;21.31
+37;Product 037;Face Care;12.72
+38;Product 038;Face Care;65.25
+39;Product 039;Face Care;54.86
+40;Product 040;Face Care;78.49
+41;Product 041;Face Care;249.45
+42;Product 042;Face Care;225.86
+43;Product 043;Face Care;187.09
+44;Product 044;Face Care;12.94
+45;Product 045;Face Care;37.03
+46;Product 046;Face Care;58.14
+47;Product 047;Face Care;219.31
+48;Product 048;Face Care;6.53
+49;Product 049;Face Care;60.3
+50;Product 050;Face Care;60.25
+51;Product 051;Face Care;107.8
+52;Product 052;Face Care;61.08
+53;Product 053;Face Care;8.47
+54;Product 054;Face Care;93.26
+55;Product 055;Face Care;13.77
+56;Product 056;Face Care;93.85
+57;Product 057;Face Care;245.41
+58;Product 058;Face Care;169.34
+59;Product 059;Face Care;188.43
+60;Product 060;Face Care;51.73
+61;Product 061;Face Care;52.82
+62;Product 062;Face Care;41.38
+63;Product 063;Face Care;96.02
+64;Product 064;Face Care;206.29
+65;Product 065;Face Care;62.07
+66;Product 066;Face Care;86.82
+67;Product 067;Body Care;30.93
+68;Product 068;Body Care;96.08
+69;Product 069;Body Care;90.17
+70;Product 070;Body Care;50.37
+71;Product 071;Body Care;16.23
+72;Product 072;Body Care;28.02
+73;Product 073;Body Care;173.08
+74;Product 074;Body Care;16.49
+75;Product 075;Body Care;150.68
+76;Product 076;Body Care;29.14
+77;Product 077;Body Care;102.91
+78;Product 078;Body Care;46.37
+79;Product 079;Body Care;10.64
+80;Product 080;Body Care;34.87
+81;Product 081;Body Care;85.04
+82;Product 082;Body Care;47
+83;Product 083;Body Care;20.79
+84;Product 084;Body Care;170.21
+85;Product 085;Body Care;22.82
+86;Product 086;Body Care;56.44
+87;Product 087;Body Care;56.97
+88;Product 088;Body Care;133.01
+89;Product 089;Body Care;12.75
+90;Product 090;Body Care;19.62
+91;Product 091;Body Care;38.79
+92;Product 092;Body Care;7.44
+93;Product 093;Body Care;33.1
+94;Product 094;Body Care;23.08
+95;Product 095;Body Care;97.5
+96;Product 096;Body Care;33.17
+97;Product 097;Body Care;63.15
+98;Product 098;Body Care;197.74
+99;Product 099;Body Care;59.74
+100;Product 100;Body Care;226.84
+101;Product 101;Body Care;21.25
+102;Product 102;Body Care;98.09
+103;Product 103;Body Care;29.55
+104;Product 104;Body Care;13.48
+105;Product 105;Body Care;236.9
+106;Product 106;Body Care;200.96
+107;Product 107;Body Care;89.96
+108;Product 108;Body Care;96.2
+109;Product 109;Body Care;21.15
+110;Product 110;Body Care;213.68
+111;Product 111;Body Care;70.46
+112;Product 112;Body Care;98.78
+113;Product 113;Body Care;76.9
+114;Product 114;Body Care;9.35
+115;Product 115;Body Care;16.23
+116;Product 116;Body Care;32.71
+117;Product 117;Body Care;41.59
+118;Product 118;Body Care;36.16
+119;Product 119;Body Care;11.29
+120;Product 120;Body Care;83.57
+121;Product 121;Body Care;7.31
+122;Product 122;Body Care;238.19
+123;Product 123;Body Care;49.22
+124;Product 124;Body Care;39.61
+125;Product 125;Body Care;85.31
+126;Product 126;Body Care;9.82
+127;Product 127;Hair Care;149.65
+128;Product 128;Hair Care;22.6
+129;Product 129;Hair Care;229.95
+130;Product 130;Hair Care;11.81
+131;Product 131;Hair Care;51.07
+132;Product 132;Hair Care;16.87
+133;Product 133;Hair Care;64.22
+134;Product 134;Hair Care;35.88
+135;Product 135;Hair Care;124.16
+136;Product 136;Hair Care;72.64
+137;Product 137;Hair Care;73.16
+138;Product 138;Hair Care;29.8
+139;Product 139;Hair Care;70.61
+140;Product 140;Hair Care;15.73
+141;Product 141;Hair Care;43.9
+142;Product 142;Hair Care;18.45
+143;Product 143;Hair Care;10.66
+144;Product 144;Hair Care;84.26
+145;Product 145;Hair Care;235.55
+146;Product 146;Hair Care;94.63
+147;Product 147;Hair Care;63.46
+148;Product 148;Hair Care;179.25
+149;Product 149;Hair Care;210.17
+150;Product 150;Hair Care;218.26
+151;Product 151;Hair Care;231.83
+152;Product 152;Hair Care;89.52
+153;Product 153;Hair Care;25.36
+154;Product 154;Hair Care;43.5
+155;Product 155;Hair Care;75.85
+156;Product 156;Hair Care;60.49
+157;Product 157;Hair Care;176.62
+158;Product 158;Hair Care;182.1
+159;Product 159;Hair Care;86.93
+160;Product 160;Hair Care;19.72
+161;Product 161;Hair Care;25.99
+162;Product 162;Hair Care;13.95
+163;Product 163;Hair Care;25.67
+164;Product 164;Hair Care;50.04
+165;Product 165;Hair Care;38.95
+166;Product 166;Hair Care;20.3
+167;Product 167;Hair Care;85.06
+168;Product 168;Hair Care;35.79
+169;Product 169;Hair Care;12.16
+170;Product 170;Hair Care;38.81
+171;Product 171;Hair Care;38.35
+172;Product 172;Hair Care;21.42
+173;Product 173;Hair Care;11.42
+174;Product 174;Hair Care;36.74
+175;Product 175;Hair Care;22.53
+176;Product 176;Hair Care;118.05
+177;Product 177;Hair Care;43.95
+178;Product 178;Hair Care;36.78
+179;Product 179;Makeup;86.06
+180;Product 180;Makeup;57.28
+181;Product 181;Makeup;21.47
+182;Product 182;Makeup;43.7
+183;Product 183;Makeup;13.35
+184;Product 184;Makeup;33.04
+185;Product 185;Makeup;80.51
+186;Product 186;Makeup;19.7
+187;Product 187;Makeup;76.66
+188;Product 188;Makeup;225.22
+189;Product 189;Makeup;77.89
+190;Product 190;Makeup;14.72
+191;Product 191;Makeup;43.09
+192;Product 192;Makeup;53.31
+193;Product 193;Makeup;11.45
+194;Product 194;Makeup;51.11
+195;Product 195;Makeup;13.88
+196;Product 196;Makeup;174.33
+197;Product 197;Makeup;5.16
+198;Product 198;Makeup;35.98
+199;Product 199;Makeup;14.58
+200;Product 200;Makeup;182.31
+201;Product 201;Makeup;9.04
+202;Product 202;Makeup;53.8
+203;Product 203;Makeup;25.06
+204;Product 204;Makeup;32.3
+205;Product 205;Makeup;171.28
+206;Product 206;Makeup;73.1
+207;Product 207;Makeup;61.69
+208;Product 208;Makeup;86.43
+209;Product 209;Makeup;15.56
+210;Product 210;Makeup;30.58
+211;Product 211;Makeup;14.93
+212;Product 212;Makeup;97.17
+213;Product 213;Makeup;206.92
+214;Product 214;Makeup;184.27
+215;Product 215;Makeup;18.96
+216;Product 216;Makeup;167.17
+217;Product 217;Makeup;186.65
+218;Product 218;Makeup;206.05
+219;Product 219;Makeup;36.62
+220;Product 220;Makeup;70.5
+221;Product 221;Makeup;190.42
+222;Product 222;Makeup;55.72
+223;Product 223;Makeup;94.67
+224;Product 224;Makeup;242.14
+225;Product 225;Makeup;15.59
+226;Product 226;Makeup;77.97
+227;Product 227;Makeup;25.24
+228;Product 228;Makeup;98.15
+229;Product 229;Makeup;82.53
+230;Product 230;Makeup;74.58
+231;Product 231;Makeup;20.79
+232;Product 232;Makeup;78.39
+233;Product 233;Makeup;7.29
+234;Product 234;Makeup;41.12
+235;Product 235;Makeup;20.65
+236;Product 236;Makeup;35
+237;Product 237;Makeup;13.4
+238;Product 238;Makeup;35.35
+239;Product 239;Makeup;79.31
+240;Product 240;Makeup;33.7
+241;Product 241;Makeup;217.2
+242;Product 242;Makeup;205.3
+243;Product 243;Makeup;22.38
+244;Product 244;Makeup;113.93
+245;Product 245;Makeup;30.8
+246;Product 246;Makeup;181.09
+247;Product 247;Makeup;237.67
+248;Product 248;Makeup;50.65
+249;Product 249;Makeup;57.6
+250;Product 250;Makeup;220.96
+251;Product 251;Makeup;241.03
+252;Product 252;Makeup;195.91
+253;Product 253;Makeup;105.26
+254;Product 254;Makeup;25.68
+255;Product 255;Makeup;16.03
+256;Product 256;Makeup;60.09
+257;Product 257;Makeup;57.34
+258;Product 258;Makeup;86.25
+259;Product 259;Makeup;30.15
+260;Product 260;Makeup;52.69
+261;Product 261;Makeup;16.41
+262;Product 262;Makeup;7.31
+263;Product 263;Makeup;50.13
+264;Product 264;Makeup;34.53
+265;Product 265;Makeup;164.8
+266;Product 266;Makeup;220.72
+267;Product 267;Makeup;57.88
+268;Product 268;Makeup;8.62
+269;Product 269;Makeup;34.63
+270;Product 270;Makeup;30.14
+271;Product 271;Makeup;196.85
+272;Product 272;Makeup;199.5
+273;Product 273;Makeup;158.21
+274;Product 274;Makeup;238.56
+275;Product 275;Makeup;16.04
+276;Product 276;Makeup;93.18
+277;Product 277;Makeup;24.34
+278;Product 278;Makeup;92.12
+279;Product 279;Makeup;214.12
+280;Product 280;Makeup;37.96
+281;Product 281;Makeup;121.25
+282;Product 282;Makeup;85.74
+283;Product 283;Makeup;31.74
+284;Product 284;Makeup;71.89
+285;Product 285;Makeup;133.95
+286;Product 286;Makeup;6.33
+287;Product 287;Makeup;101.21
+288;Product 288;Makeup;142.33
+289;Product 289;Makeup;36.56
+290;Product 290;Makeup;80.34
+291;Product 291;Makeup;66.99
+292;Product 292;Makeup;78.84
+293;Product 293;Makeup;49.67
+294;Product 294;Makeup;157.46
+295;Product 295;Makeup;10.82
+296;Product 296;Makeup;129.41
+297;Product 297;Makeup;149.88
+298;Product 298;Makeup;6.88
+299;Product 299;Makeup;36.5
+300;Product 300;Makeup;22.41
+301;Product 301;Makeup;217.26
+302;Product 302;Makeup;95.71
+303;Product 303;Makeup;86.81
+304;Product 304;Makeup;32.05
+305;Product 305;Makeup;33.73
+306;Product 306;Makeup;77.18
+307;Product 307;Makeup;99.38
+308;Product 308;Makeup;212.73
+309;Product 309;Makeup;70.32
+310;Product 310;Makeup;188.26
+311;Product 311;Makeup;28.11
+312;Product 312;Makeup;91.25
+313;Product 313;Makeup;56.52
+314;Product 314;Makeup;81.11
+315;Product 315;Makeup;11.86
+316;Product 316;Makeup;163.65
+317;Product 317;Fragrances;38.39
+318;Product 318;Fragrances;37.9
+319;Product 319;Fragrances;200.51
+320;Product 320;Fragrances;31.21
+321;Product 321;Fragrances;72.68
+322;Product 322;Fragrances;227.34
+323;Product 323;Fragrances;246.46
+324;Product 324;Fragrances;33.04
+325;Product 325;Fragrances;77.17
+326;Product 326;Fragrances;23.49
+327;Product 327;Fragrances;114.44
+328;Product 328;Fragrances;21.44
+329;Product 329;Fragrances;195.87
+330;Product 330;Fragrances;151.53
+331;Product 331;Fragrances;43.03
+332;Product 332;Fragrances;7.94
+333;Product 333;Fragrances;56.32
+334;Product 334;Fragrances;88.91
+335;Product 335;Fragrances;25.2
+336;Product 336;Fragrances;27.85
+337;Product 337;Fragrances;46.92
+338;Product 338;Fragrances;35.99
+339;Product 339;Fragrances;227.15
+340;Product 340;Fragrances;210.84
+341;Product 341;Fragrances;237.76
+342;Product 342;Fragrances;89.35
+343;Product 343;Fragrances;17.97
+344;Product 344;Fragrances;11.68
+345;Product 345;Fragrances;52.38
+346;Product 346;Fragrances;33.42
+347;Product 347;Fragrances;56.65
+348;Product 348;Fragrances;17.02
+349;Product 349;Fragrances;6.24
+350;Product 350;Fragrances;118.67
+351;Product 351;Hygiene;15.22
+352;Product 352;Hygiene;43.97
+353;Product 353;Hygiene;88.9
+354;Product 354;Hygiene;29.98
+355;Product 355;Hygiene;159.04
+356;Product 356;Hygiene;91.26
+357;Product 357;Hygiene;51.24
+358;Product 358;Hygiene;6.07
+359;Product 359;Hygiene;179.7
+360;Product 360;Hygiene;54.08
+361;Product 361;Hygiene;14.99
+362;Product 362;Hygiene;69.35
+363;Product 363;Hygiene;16.98
+364;Product 364;Hygiene;57.59
+365;Product 365;Hygiene;192.26
+366;Product 366;Hygiene;34.74
+367;Product 367;Hygiene;25.64
+368;Product 368;Hygiene;16.17
+369;Product 369;Hygiene;19.49
+370;Product 370;Hygiene;91.88
+371;Product 371;Hygiene;27.9
+372;Product 372;Hygiene;36.04
+373;Product 373;Hygiene;73.66
+374;Product 374;Hygiene;70.41
+375;Product 375;Hygiene;32.68
+376;Product 376;Hygiene;130.04
+377;Product 377;Hygiene;20.79
+378;Product 378;Hygiene;86.21
+379;Product 379;Hygiene;15.19
+380;Product 380;Hygiene;18.18
+381;Product 381;Hygiene;37.52
+382;Product 382;Hygiene;11.62
+383;Product 383;Hygiene;162.97
+384;Product 384;Hygiene;68.55
+385;Product 385;Hygiene;55.7
+386;Product 386;Hygiene;68.44
+387;Product 387;Hygiene;83.95
+388;Product 388;Hygiene;13.83
+389;Product 389;Hygiene;151.35
+390;Product 390;Hygiene;5.51
+391;Product 391;Hygiene;19.47
+392;Product 392;Hygiene;187.19
+393;Product 393;Hygiene;34.73
+394;Product 394;Hygiene;242.5
+395;Product 395;Hygiene;90.19
+396;Product 396;Hygiene;16.62
+397;Product 397;Hygiene;7.49
+398;Product 398;Hygiene;57.79
+399;Product 399;Hygiene;86.12
+400;Product 400;Hygiene;107.97
