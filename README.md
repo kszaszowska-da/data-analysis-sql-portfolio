@@ -73,7 +73,7 @@ Projekt stworzony w ramach nauki analizy danych i BI. Dane i dashboard mają cha
 
 ## Źródła / Podziękowania
 
-- Do stworzenia wizualizacji mapy regionalnej w Power BI wykorzystano plik TopoJSON przedstawiający granice województw Polski, pobrany z serwisu [SimpleMaps](https://simplemaps.com/gis/country/pl).
+Do stworzenia wizualizacji mapy regionalnej w Power BI wykorzystano plik TopoJSON przedstawiający granice województw Polski, pobrany z serwisu [SimpleMaps](https://simplemaps.com/gis/country/pl).
 
 ---
 
@@ -156,7 +156,7 @@ The project was created as part of learning data analysis and BI. The data and d
 
 ## Sources / Acknowledgements
 
-- The regional map visualization in Power BI used a TopoJSON file showing Polish voivodeship borders, downloaded from [SimpleMaps](https://simplemaps.com/gis/country/pl).
+The regional map visualization in Power BI used a TopoJSON file showing Polish voivodeship borders, downloaded from [SimpleMaps](https://simplemaps.com/gis/country/pl).
 
 ---
 
