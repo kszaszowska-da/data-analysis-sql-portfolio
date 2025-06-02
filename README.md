@@ -40,7 +40,7 @@ Diagram ERD znajduje się w folderze `img/`.
 ## Struktura folderów
 
 - `sql/` – zapytania SQL  
-- `doc/` – dane źródłowe CSV oraz dokumentacja  
+- `data/` – dane źródłowe CSV  
 - `img/` – dashboard Power BI, schemat ERD, logo
 - `README.md` – opis projektu  
 
@@ -124,7 +124,7 @@ The ERD diagram can be found in the `img/` folder.
 ## Folder Structure
 
 - `sql/` – SQL queries  
-- `doc/` – source CSV data and documentation  
+- `data/` – source CSV data  
 - `img/` – Power BI dashboard, ERD schema, logo  
 - `README.md` – project description  
 
