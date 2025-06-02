@@ -53,14 +53,14 @@ Diagram ERD znajduje się w folderze `img/`.
 - **Dynamiczny wzrost sprzedaży** – Łączna wartość sprzedaży w 2024 roku wyniosła 2,78 mln zł, co stanowi wzrost o 77,73% względem 2023 r.
 - **Sezonowość** – Wzrost sprzedaży od czerwca z kulminacją w grudniu (396 tys. zł), wskazuje na skuteczne działania marketingowe.
 - **Kategorie produktów** – Największy udział mają Makeup (27,06%) i Face Care (23,71%). Najniższy: Fragrances i Hygiene.
-- **Metody płatności** – Dominują BLIK, karty i szybkie przelewy. Odroczone płatności zyskują na popularności od sierpnia.
+- **Metody płatności** – Dominują BLIK, karty i szybkie przelewy. Odroczone płatności zyskują na popularności od wprowadzenia takiej możliwości.
 - **Zróżnicowanie regionalne** – Największa sprzedaż: woj. podkarpackie i mazowieckie. Najmniejsza: świętokrzyskie i śląskie.
 
 ### Rekomendacje:
 
 - Monitorować I kwartał 2025 – czy wzrostowy trend się utrzyma.
 - Kontynuować rozwój kategorii Makeup i Face Care, ale wspierać Fragrances kampaniami promocyjnymi.
-- Rozwijać metody płatności online – szczególnie BLIK i przelewy błyskawiczne.
+- Rozwijać metody płatności online – szczególnie BLIK i przelewy błyskawiczne oraz dynamiczniej rozwijające się płatności odroczone.
 - Wykorzystać wysoką średnią wartość koszyka (277,55 zł) do kampanii retencyjnych i cross-sellingowych.
 
 ---
@@ -137,14 +137,14 @@ The ERD diagram can be found in the `img/` folder.
 - **Dynamic sales growth** – The total sales value in 2024 amounted to 2.78 million PLN, which is a 77.73% increase compared to 2023.
 - **Seasonality** – Sales growth from June, peaking in December (396k PLN), indicates effective marketing activities.
 - **Product categories** – Largest shares: Makeup (27.06%) and Face Care (23.71%). Lowest: Fragrances and Hygiene.
-- **Payment methods** – Dominated by BLIK, cards, and quick transfers. Deferred payments have been gaining popularity since August.
+- **Payment methods** – BLIK, cards, and instant bank transfers dominate. Deferred payments have been gaining popularity since their introduction.
 - **Regional diversity** – Highest sales: Podkarpackie and Mazowieckie voivodeships. Lowest: Świętokrzyskie and Śląskie.
 
 ### Recommendations:
 
 - Monitor Q1 2025 – to check if the upward trend continues.
 - Continue developing Makeup and Face Care categories, but support Fragrances with promotional campaigns.
-- Develop online payment methods – especially BLIK and instant transfers.
+- Develop online payment methods—especially BLIK and instant bank transfers—as well as the rapidly growing buy now, pay later options.
 - Use the high average basket value (277.55 PLN) for retention and cross-selling campaigns.
 
 ---
