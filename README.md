@@ -84,6 +84,7 @@ Dane mają charakter edukacyjny i nie przedstawiają rzeczywistych transakcji.
 
 
 ---
+---
 
 
 
