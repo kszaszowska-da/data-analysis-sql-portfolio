@@ -7,6 +7,7 @@ SQL queries for data analysis – part of my data analyst portfolio.
 # Analiza Sprzedaży – Drogeria Internetowa (wersja polska)
 
 
+
 ![Dashboard Power BI](img/dashboard.png)
 
 
@@ -93,6 +94,7 @@ Dane mają charakter edukacyjny i nie przedstawiają rzeczywistych transakcji.
 
 
 # Sales Analysis – Online Cosmetics Store (English version)
+
 
 
 ![Dashboard Power BI](img/dashboard.png)
