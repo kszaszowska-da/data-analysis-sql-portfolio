@@ -6,7 +6,9 @@ SQL queries for data analysis – part of my data analyst portfolio.
 
 # Analiza Sprzedaży – Drogeria Internetowa (wersja polska)
 
+
 ![Dashboard Power BI](img/dashboard.png)
+
 
 Projekt analizy sprzedaży dla fikcyjnej drogerii internetowej działającej na terenie całej Polski. Celem było stworzenie kompleksowej bazy danych, wykonanie zapytań SQL, a także wizualizacja danych w formie interaktywnego dashboardu na podstawie przeprowadzonej analizy.
 
@@ -92,7 +94,9 @@ Dane mają charakter edukacyjny i nie przedstawiają rzeczywistych transakcji.
 
 # Sales Analysis – Online Cosmetics Store (English version)
 
+
 ![Dashboard Power BI](img/dashboard.png)
+
 
 The sales analysis project for a fictional online cosmetics store operating throughout Poland. The goal was to create a comprehensive database, write SQL queries, and visualize the data through an interactive dashboard based on the analysis performed.
 
