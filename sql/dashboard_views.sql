@@ -1,32 +1,32 @@
 /*
     dashboard_views.sql
 
-    Ten plik zawiera definicje widoków SQL dla dashboardu KPI i analiz sprzedaży, obejmujące:
-    - Kluczowe wskaźniki wydajności (KPI) dla roku 2024 (sprzedaż, liczba zamówień i klientów, średnia wartość zamówienia, porównanie wzrostu sprzedaży rok do roku)
-    - Sprzedaż wg kategorii produktów w 2024 roku
-    - Sprzedaż miesięczna w latach 2023 i 2024
-    - Sprzedaż wg regionów w 2024 roku
-    - Liczbę zamówień wg metody płatności w 2024 roku
+    This file contains SQL view definitions for the KPI dashboard and sales analysis, including:
+    - Key Performance Indicators (KPIs) for the year 2024 (sales, number of orders and customers, average order value, year-over-year sales growth)
+    - Sales by product category in 2024
+    - Monthly sales in 2023 and 2024
+    - Sales by regions in 2024
+    - Number of orders by payment method in 2024
 
-    Widoki służą do prezentacji danych na dashboardzie wykonanym w Power BI, w bezpośrednim połączeniu z bazą danych.
+    These views are used to present data in a Power BI dashboard with a direct connection to the database.
 */
 
 -- Dashboard KPI.
 CREATE OR REPLACE VIEW _dashboard_kpi AS
 SELECT
-    -- Suma sprzedaży w 2024 roku
+    -- Total sales in 2024
     SUM(order_details.quantity_ordered * order_details.unit_price)
     FILTER (WHERE EXTRACT(YEAR FROM orders.order_date) = 2024) AS total_sales_2024,
 
-    -- Liczba unikalnych zamówień w 2024 roku
+    -- Number of unique orders in 2024
     COUNT(DISTINCT orders.order_id)
     FILTER (WHERE EXTRACT(YEAR FROM orders.order_date) = 2024) AS orders_2024,
 
-    -- Liczba unikalnych klientów w 2024 roku
+    -- Number of unique customers in 2024
     COUNT(DISTINCT orders.customer_id)
     FILTER (WHERE EXTRACT(YEAR FROM orders.order_date) = 2024) AS customers_2024,
 
-    -- Średnia wartość zamówienia w 2024 roku (średnia kwota 1 zamówienia)
+    -- Average order value in 2024 (average amount per order)
     (SELECT ROUND(AVG(order_total), 2)
      FROM (SELECT orders.order_id, SUM(order_details.quantity_ordered * order_details.unit_price) AS order_total
            FROM orders
@@ -34,7 +34,7 @@ SELECT
            WHERE EXTRACT(YEAR FROM orders.order_date) = 2024
            GROUP BY orders.order_id) AS order_totals)          AS avg_order_value_2024,
 
-    -- Wzrost sprzedaży rok do roku (YoY Growth %)
+    -- Year-over-year sales growth (YoY Growth %)
     ROUND(
             (
                         SUM(order_details.quantity_ordered * order_details.unit_price)
@@ -52,7 +52,7 @@ SELECT
 FROM orders
          JOIN order_details ON orders.order_id = order_details.order_id;
 
--- Dashboard sprzedaż wg kategorii (2024).
+-- Dashboard: sales by category (2024).
 CREATE OR REPLACE VIEW _dashboard_sales_by_category_2024 AS
 SELECT products.category,
        SUM(order_details.quantity_ordered * order_details.unit_price) AS total_sales
@@ -62,7 +62,7 @@ FROM order_details
 WHERE EXTRACT(YEAR FROM orders.order_date) = 2024
 GROUP BY products.category;
 
--- Dashboard sprzedaż miesięczna (2023 vs 2024).
+-- Dashboard: monthly sales (2023 vs 2024).
 CREATE OR REPLACE VIEW _dashboard_sales_over_time AS
 SELECT DATE_TRUNC('month', orders.order_date)                         AS month,
        EXTRACT(YEAR FROM orders.order_date)                           AS year,
@@ -73,7 +73,7 @@ WHERE EXTRACT(YEAR FROM orders.order_date) IN (2023, 2024)
 GROUP BY DATE_TRUNC('month', orders.order_date), EXTRACT(YEAR FROM orders.order_date)
 ORDER BY month;
 
--- Dashboard sprzedaż wg regionów (2024).
+-- Dashboard: sales by regions (2024).
 CREATE OR REPLACE VIEW _dashboard_sales_by_region_2024 AS
 SELECT customers.region_id,
        regions.region_name,
@@ -85,7 +85,7 @@ FROM order_details
 WHERE EXTRACT(YEAR FROM orders.order_date) = 2024
 GROUP BY customers.region_id, regions.region_name;
 
--- Dashboard liczba zamówień wg metody płatności (2024).
+-- Dashboard: number of orders by payment method (2024).
 CREATE OR REPLACE VIEW _dashboard_payment_methods_2024 AS
 SELECT DATE_TRUNC('month', orders.order_date) AS month,
        orders.payment_method,
