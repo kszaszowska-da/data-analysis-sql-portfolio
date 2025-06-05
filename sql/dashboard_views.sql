@@ -14,19 +14,19 @@
 -- Dashboard KPI.
 CREATE OR REPLACE VIEW _dashboard_kpi AS
 SELECT
-    -- Total sales in 2024
+    -- Total sales in 2024.
     SUM(order_details.quantity_ordered * order_details.unit_price)
     FILTER (WHERE EXTRACT(YEAR FROM orders.order_date) = 2024) AS total_sales_2024,
 
-    -- Number of unique orders in 2024
+    -- Number of unique orders in 2024.
     COUNT(DISTINCT orders.order_id)
     FILTER (WHERE EXTRACT(YEAR FROM orders.order_date) = 2024) AS orders_2024,
 
-    -- Number of unique customers in 2024
+    -- Number of unique customers in 2024.
     COUNT(DISTINCT orders.customer_id)
     FILTER (WHERE EXTRACT(YEAR FROM orders.order_date) = 2024) AS customers_2024,
 
-    -- Average order value in 2024 (average amount per order)
+    -- Average order value in 2024 (average amount per order).
     (SELECT ROUND(AVG(order_total), 2)
      FROM (SELECT orders.order_id, SUM(order_details.quantity_ordered * order_details.unit_price) AS order_total
            FROM orders
@@ -34,7 +34,7 @@ SELECT
            WHERE EXTRACT(YEAR FROM orders.order_date) = 2024
            GROUP BY orders.order_id) AS order_totals)          AS avg_order_value_2024,
 
-    -- Year-over-year sales growth (YoY Growth %)
+    -- Year-over-year sales growth (YoY Growth %).
     ROUND(
             (
                         SUM(order_details.quantity_ordered * order_details.unit_price)
