@@ -1,20 +1,20 @@
 /*
     data_quality_and_analysis.sql
 
-    Ten plik zawiera zestaw zapytań SQL związanych z:
-    - Analizą jakości danych (np. wykrywanie błędów, braków, duplikatów)
-    - Czyszczeniem i walidacją danych klientów
-    - Tworzeniem widoków i tabel pomocniczych do dalszej analizy
-    - Weryfikacją poprawności danych (np. formaty email, telefonów)
-    - Analizą zamówień i klientów (np. aktywność, statusy)
-    - Podstawowymi statystykami, takimi jak średnia wartość zamówienia
+    This file contains a set of SQL queries related to:
+    - Data quality analysis (e.g., detecting errors, missing values, duplicates)
+    - Cleaning and validating customer data
+    - Creating views and helper tables for further analysis
+    - Verifying data correctness (e.g., email and phone formats)
+    - Analyzing orders and customers (e.g., activity, statuses)
+    - Basic statistics such as average order value
 
-    Każde zapytanie jest opatrzone komentarzem wyjaśniającym jego cel.
+    Each query is accompanied by a comment explaining its purpose.
 
-    Plik należy wykonywać w całości w podanej kolejności, aby zachować ciągłość i poprawność wyników.
+    The file should be executed in full and in the given order to maintain consistency and result accuracy.
 */
 
--- 1. Zliczanie rekordów z błędami w poszczególnych kolumnach.
+-- 1. Counting records with errors in specific columns.
 SELECT COUNT(*) FILTER (WHERE first_name IS NULL OR
                               first_name IN ('', '-1', '0', 'unknown', 'none', 'NULL', 'N/A', '---')) AS bad_first_name,
        COUNT(*) FILTER (WHERE last_name IS NULL OR last_name IN ('', '-1', '0', 'unknown', 'none', 'NULL', 'N/A',
@@ -34,7 +34,7 @@ SELECT COUNT(*) FILTER (WHERE first_name IS NULL OR
                                                         '---'))                                       AS bad_customer_type
 FROM customers;
 
--- 2. Wyszukiwanie rekordów zawierających białe znaki i błędne dane, w przypadku pojawienia się błędu zastąpienie go NULL dla łatwiejszej późniejszej selekcji.
+-- 2. Searching for records containing whitespace and incorrect data; if an error is found, it is replaced with NULL for easier selection later.
 CREATE OR REPLACE VIEW cleaned_customers_step1 AS
 SELECT customer_id,
        CASE
@@ -81,7 +81,7 @@ SELECT customer_id,
        region_id
 FROM customers;
 
--- 3. Zapytanie wyszukujące zduplikowanych klientów o identycznych danych: imię, nazwisko, e-mail, telefon, miasto, kod pocztowy i adres.
+-- 3. Query for finding duplicate customers with identical data: first name, last name, email, phone, city, postal code, and address.
 SELECT first_name,
        last_name,
        email,
@@ -95,7 +95,7 @@ GROUP BY first_name, last_name, email, phone, city, postal_code, address
 HAVING COUNT(*) > 1
 ORDER BY duplicate_count DESC;
 
--- 4. Zapytanie wyświetlające rekordy z duplikatami maili i numerów telefonów.
+-- 4. Query displaying records with duplicate emails and phone numbers.
 SELECT *
 FROM cleaned_customers_step1
 WHERE email IN (SELECT email
@@ -109,7 +109,7 @@ WHERE email IN (SELECT email
                 GROUP BY phone
                 HAVING COUNT(*) > 1);
 
--- 5. Zapytanie tworzące widok z duplikatami maili i numerów telefonów, bez ich usuwania do ewentualnej późniejszej analizy.
+-- 5. Query creating a view with duplicate emails and phone numbers, without removing them, for possible later analysis.
 CREATE OR REPLACE VIEW duplicated_emails_phones AS
 SELECT *
 FROM cleaned_customers_step1
@@ -124,7 +124,7 @@ WHERE email IN (SELECT email
                 GROUP BY phone
                 HAVING COUNT(*) > 1);
 
--- 6. Zapytanie sprawdzające czy nie ma liczb w polach tekstowych lub czy nie ma liter w polach liczbowych.
+-- 6. Query checking for digits in text fields or letters in numeric fields.
 SELECT *
 FROM cleaned_customers_step1
 WHERE first_name ~ '[0-9]'
@@ -134,7 +134,7 @@ WHERE first_name ~ '[0-9]'
    OR phone ~ '[^0-9+ ]'
    OR postal_code ~ '[^0-9-]';
 
--- 7. Zapytanie z walidacją email, telefonu i kodu pocztowego.
+-- 7. Query validating email, phone number and postal code.
 SELECT *
 FROM cleaned_customers_step1
 WHERE phone !~ '^[0-9 +()-]+$'
@@ -142,7 +142,7 @@ WHERE phone !~ '^[0-9 +()-]+$'
    OR email !~ '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$'
    OR postal_code !~ '^[0-9]{2}-[0-9]{3}$';
 
--- 8. Zapytanie zmieniające pierwsze litery imion i nazwisk na wielkie.
+-- 8. Query changing the first letters of names and surnames to uppercase.
 SELECT DISTINCT first_name, last_name
 FROM cleaned_customers_step1
 WHERE first_name IS NOT NULL AND
@@ -152,7 +152,7 @@ WHERE first_name IS NOT NULL AND
       (LEFT(last_name, 1) <> UPPER(LEFT(last_name, 1))
           OR SUBSTRING(last_name FROM 2) <> LOWER(SUBSTRING(last_name FROM 2)));
 
--- 9. Zapytanie tworzące widok z NULLami w miejscach niepoprawnych formatów telefonów
+-- 9. Query creating a view with NULLs in place of invalid phone formats.
 CREATE OR REPLACE VIEW cleaned_customers_step2 AS
 SELECT customer_id,
        first_name,
@@ -182,7 +182,7 @@ SELECT customer_id,
        region_id
 FROM cleaned_customers_step1;
 
--- 10. Sprawdzenie długości pól tekstowych przekraczających rozsądne limity.
+-- 10. Checking if text fields exceed reasonable length limits.
 SELECT *
 FROM cleaned_customers_step2
 WHERE LENGTH(first_name) > 30
@@ -193,24 +193,24 @@ WHERE LENGTH(first_name) > 30
    OR LENGTH(postal_code) > 10
    OR LENGTH(address) > 100;
 
--- 11. Klienci z podejrzanie krótkim imieniem lub nazwiskiem.
+-- 11. Customers with suspiciously short first or last names.
 SELECT *
 FROM cleaned_customers_step2
 WHERE LENGTH(first_name) < 2
    OR LENGTH(last_name) < 2;
 
--- 12. Zapytanie sprawdzające czy są zamówienia z nieistniejącym produktem.
+-- 12. Query checking for orders with non-existent products.
 SELECT *
 FROM order_details
 WHERE product_id NOT IN (SELECT product_id FROM products);
 
--- 13. Zapytanie sprawdzające czy są klienci bez region_id.
+-- 13. Query checking for customers without a valid region_id.
 SELECT *
 FROM cleaned_customers_step2
 WHERE region_id IS NOT NULL
   AND region_id NOT IN (SELECT region_id FROM regions);
 
--- 14. Zapytanie sprawdzające czy nie ma powtórzeń ID dla tego samego klienta.
+-- 14. Query checking for repeated IDs for the same customer.
 SELECT *
 FROM cleaned_customers_step2
 WHERE customer_id IN (SELECT customer_id
@@ -221,7 +221,7 @@ WHERE customer_id IN (SELECT customer_id
                           OR COUNT(DISTINCT email) > 1
                           OR COUNT(DISTINCT phone) > 1);
 
--- 15. Zapytanie sprawdzające, czy nie ma powtórzeń ID dla tego samego zamówienia.
+-- 15. Query checking for duplicate IDs for the same order.
 SELECT *
 FROM orders
 WHERE order_id IN (SELECT order_id
@@ -233,14 +233,14 @@ WHERE order_id IN (SELECT order_id
                        OR COUNT(DISTINCT payment_method) > 1)
 ORDER BY order_id;
 
--- 16. Klienci, którzy nie złożyli żadnego zamówienia (rejestracja bez zakupów, porzucony koszyk itd.)
+-- 16. Customers who didn’t place any orders (registration without purchases, abandoned cart, etc.)
 SELECT *
 FROM cleaned_customers_step2 AS customers
 WHERE NOT EXISTS (SELECT 1
                   FROM orders
                   WHERE orders.customer_id = customers.customer_id);
 
--- 17. Dodanie kolumny status dla aktywnych i nieaktywnych klientów do widoku cleaned_customers_step2 i stworzenie kolejnego widoku.
+-- 17. Adding a status column for active and inactive customers to the view `cleaned_customers_step2` and creating a new view.
 CREATE OR REPLACE VIEW cleaned_customers_step3 AS
 SELECT cleaned_customers_step2.*,
        CASE
@@ -251,52 +251,52 @@ SELECT cleaned_customers_step2.*,
            END AS status
 FROM cleaned_customers_step2;
 
--- 18. Tworzenie tabeli z potencjalnymi klientami, czyli tymi którzy są w bazie, ale finalnie nic nie zamówili.
+-- 18. Creating a table with potential customers, i.e. those who are in the database but didn’t place any order.
 CREATE TABLE potential_customers AS
 SELECT *
 FROM cleaned_customers_step3
 WHERE status = 'potential';
 
--- 19. Tworzenie widoku z aktywnymi klientami.
+-- 19. Creating a view with active customers.
 CREATE VIEW active_customers AS
 SELECT *
 FROM cleaned_customers_step3
 WHERE status = 'active';
 
--- 20. Sprawdzenie zamówień bez powiązanego klienta.
+-- 20. Checking for orders without a linked customer.
 SELECT *
 FROM orders
 WHERE customer_id IS NULL;
 
--- 21. Sprawdzenie zamówień z nieprawidłową datą (w przyszłości).
+-- 21. Checking for orders with an invalid date (in the future).
 SELECT *
 FROM orders
 WHERE order_date > CURRENT_DATE;
 
--- 22. Produkty bez ceny lub z ceną <= 0.
+-- 22. Products without a price or with a price ≤ 0.
 SELECT *
 FROM products
 WHERE price IS NULL
    OR price <= 0;
 
--- 23. Sprawdzenie czy istanieją produkty bez przypisanej kategorii.
+-- 23. Checking if there are products without an assigned category.
 SELECT *
 FROM products
 WHERE category IS NULL
    OR category = '';
 
--- 24. Sprawdzenie czy istanieją produkty bez nazwy.
+-- 24. Checking if there are products without a name.
 SELECT *
 FROM products
 WHERE product_name IS NULL
    OR TRIM(product_name) = '';
 
--- 25. Produkty, które nigdy nie zostały zamówione.
+-- 25. Products that have never been ordered.
 SELECT *
 FROM products
 WHERE product_id NOT IN (SELECT DISTINCT product_id FROM orders);
 
--- 26. Klienci z więcej niż 10 zamówieniami.
+-- 26. Customers with more than 10 orders.
 SELECT cleaned_customers_step3.customer_id,
        COUNT(*) AS order_count
 FROM cleaned_customers_step3
@@ -304,7 +304,7 @@ FROM cleaned_customers_step3
 GROUP BY cleaned_customers_step3.customer_id
 HAVING COUNT(*) > 10;
 
--- 27. Oblicenie precentowe rekordów z NULLami.
+-- 27. Calculating the percentage of records with NULLs.
 SELECT COUNT(*) AS total_rows,
        COUNT(*) FILTER (
            WHERE
@@ -336,7 +336,7 @@ SELECT COUNT(*) AS total_rows,
        )        AS percent_with_nulls
 FROM cleaned_customers_step3;
 
--- 28. Widok pokazujący tylko rekordy z NULLami.
+-- 28. View showing only records with NULL values.
 CREATE OR REPLACE VIEW customers_with_nulls AS
 SELECT *
 FROM cleaned_customers_step3
@@ -351,7 +351,7 @@ WHERE customer_id IS NULL
    OR customer_type IS NULL
    OR region_id IS NULL;
 
--- 29. Tworzenie tabeli pomocniczej z wartością zamówień.
+-- 29. Creating a helper table with order values.
 CREATE TABLE order_totals AS
 SELECT orders.order_id,
        orders.customer_id,
@@ -360,11 +360,11 @@ FROM orders
          JOIN order_details ON orders.order_id = order_details.order_id
 GROUP BY orders.order_id, orders.customer_id;
 
--- 30. Jaka jest średnia wartość zamówienia.
+-- 30. What is the average order value.
 SELECT AVG(total_amount) AS average_order_value
 FROM order_totals;
 
--- 31. Funkcja do obliczania średniej wartości zamówienia (bez podania okresu czasowego).
+-- 31. Function to calculate the average order value (without providing a time range).
 CREATE OR REPLACE FUNCTION average_order_value()
     RETURNS NUMERIC AS
 $$
@@ -376,5 +376,5 @@ FROM (SELECT orders.order_id,
       GROUP BY orders.order_id) AS order_totals;
 $$ LANGUAGE sql;
 
--- 32. Wywołanie funkcji.
+-- 32. Calling the function.
 SELECT average_order_value();
