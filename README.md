@@ -1,5 +1,5 @@
-# data-analysis-sql-portfolio
-SQL queries for data analysis – part of my data analyst portfolio.
+# cosmetics-store-sales-analysis
+Sales analysis of cosmetics store using PostgreSQL and Power BI
 
 **ENGLISH BELOW**
 
